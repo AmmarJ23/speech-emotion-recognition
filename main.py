@@ -2,9 +2,10 @@ import pyaudio
 import PySimpleGUI as sg
 import speech_recognition as sr
 
-r=sr.Recognizer()
-with sr.Microphone as source:
-    print("talk peasant")
+# obtain audio from the microphone
+r = sr.Recognizer()
+with sr.Microphone() as source:
+    print("Say something!")
     audio = r.listen(source)
 
 # recognize speech using Google Speech Recognition
