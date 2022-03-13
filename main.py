@@ -23,7 +23,7 @@ while(True):
 
     #add transcribed text into main text file
     mainTextTemp = str(transcribedText)
-    mainText = mainText + " " + mainTextTemp
+    mainText = mainText + ". " + mainTextTemp
 
     with open("Transcribed Text.txt", 'w') as f:
         f.write(mainText)
