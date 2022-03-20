@@ -2,7 +2,7 @@ from emotions import create_feature, vectorizer, clf, emoji_dict
 
 """
 t1 = "I don't know what to do after my father passed away yesterday"
-t2 = "I will hit him if he does not shut up"
+t2 = "I do not feel that well today"
 t3 = "My dog died yesterday"
 t4 = "I don't love you anymore..!"
 
