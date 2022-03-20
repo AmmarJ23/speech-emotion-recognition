@@ -2,7 +2,7 @@ import pyaudio
 import PySimpleGUI as sg
 import speech_recognition as sr
 
-mainTextEN , mainTextCH, mainTextMy = " "
+mainTextEN = mainTextCH = mainTextMY = " "
 
 while(True):
 
