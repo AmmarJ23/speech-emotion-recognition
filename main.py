@@ -23,7 +23,7 @@ while(True):
 
     #recognise chinese
     try:
-        transcribedTextCH = r.recognize_google(audio, language="zh (cmn-Hans-CN)")
+        transcribedTextCH = r.recognize_google(audio, language="zh")
         print("Google Speech Recognition - Chinese: " + transcribedTextCH)
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
@@ -34,6 +34,15 @@ while(True):
     try:
         transcribedTextMY = r.recognize_google(audio, language="ms-My")
         print("Google Speech Recognition - Malay: " + transcribedTextMY)
+    except sr.UnknownValueError:
+        print("Google Speech Recognition could not understand audio")
+    except sr.RequestError as e:
+        print("Could not request results from Google Speech Recognition service; {0}".format(e))
+
+    #recognise japanese
+    try:
+        transcribedTextJP = r.recognize_google(audio, language="ja-JP")
+        print("Google Speech Recognition - Malay: " + transcribedTextJP)
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
     except sr.RequestError as e:
@@ -55,9 +64,9 @@ while(True):
         f.write(mainTextEN)
         f.close
     
-    with open("Transcribed Text - CH.txt", 'w') as f:
-        f.write(mainTextCH)
-        f.close
+    #with open("Transcribed Text - CH.txt", 'w') as f:
+    #    f.write(mainTextCH)
+    #    f.close
 
     with open("Transcribed Text - MY.txt", 'w') as f:
         f.write(mainTextMY)
