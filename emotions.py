@@ -17,7 +17,7 @@ def read_data(file):
             data.append([label, text])
     return data
 
-file = 'text.txt'
+file = 'dataset.txt'
 data = read_data(file)
 print("Number of instances: {}".format(len(data)))
 
