@@ -102,4 +102,4 @@ for l in sorted(label_freq, key=label_freq.get, reverse=True):
     print("{:10}({})  {}".format(convert_label(l, emotions), l, label_freq[l]))
 
 #emoji dictionary
-emoji_dict = {"joy":"😂", "fear":"😱", "anger":"😠", "sadness":"😢", "disgust":"😒", "shame":"😳", "guilt":"😳"}
+emoji_dict = {"joy":"-joy-", "fear":"-fear-", "anger":"-anger-", "sadness":"-sadness-", "disgust":"-disgust-", "shame":"-shame-", "guilt":"-guilt-"}
