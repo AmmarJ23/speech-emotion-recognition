@@ -62,6 +62,7 @@ for label, text in data:
 #split into training and test sets
 X_train, X_test, y_train, y_test = train_test_split(X_all, y_all, test_size = 0.2, random_state = 123)
 
+#try removing this for test
 def train_test(clf, X_train, X_test, y_train, y_test):
     clf.fit(X_train, y_train)
     train_acc = accuracy_score(y_train, clf.predict(X_train))
