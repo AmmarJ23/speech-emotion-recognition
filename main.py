@@ -39,15 +39,6 @@ while(True):
     except sr.RequestError as e:
         print("Could not request results from Google Speech Recognition service; {0}".format(e))
 
-    #recognise japanese
-    try:
-        transcribedTextJP = r.recognize_google(audio, language="ja-JP")
-        print("Google Speech Recognition - Malay: " + transcribedTextJP)
-    except sr.UnknownValueError:
-        print("Google Speech Recognition could not understand audio")
-    except sr.RequestError as e:
-        print("Could not request results from Google Speech Recognition service; {0}".format(e))
-
     #english transcribed text into main file
     mainTextTempEN = str(transcribedTextEN)
     mainTextEN = mainTextEN + ". " + mainTextTempEN
