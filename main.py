@@ -60,14 +60,14 @@ while(True):
     mainTextTempMY = str(transcribedTextMY)
     mainTextMY = mainTextMY + ". " + mainTextTempMY
 
-    with open("Transcribed Text - EN.txt", 'w') as f:
+    with open("Transcribed_Text\Transcribed Text - EN.txt", 'w') as f:
         f.write(mainTextEN)
         f.close
     
-    #with open("Transcribed Text - CH.txt", 'w') as f:
+    #with open("Transcribed_Text\Transcribed Text - CH.txt", 'w') as f:
     #    f.write(mainTextCH)
     #    f.close
 
-    with open("Transcribed Text - MY.txt", 'w') as f:
+    with open("Transcribed_Text\Transcribed Text - MY.txt", 'w') as f:
         f.write(mainTextMY)
         f.close
