@@ -1,6 +1,6 @@
 import pyaudio
 import speech_recognition as sr
-from emotions import create_feature, vectorizer, clf, emoji_dict
+from emotions import create_feature, vectorizer, clf, emo_dict
 
 def processAudio(userChoice, audio):
 
@@ -41,6 +41,12 @@ def processAudio(userChoice, audio):
             print("Could not request results from Google Speech Recognition service; {0}".format(e))
         return transcribedTextMY
 
+def emo_get(title ,text):
+    features = create_feature(text)
+    features = vectorizer.transform(features)
+    prediction = clf.predict(features)[0]
+    print(title, emo_dict[prediction])
+
 mainTextEN = mainTextCH = mainTextMY = mainText = ""
 userChoice = 0
 
@@ -62,8 +68,5 @@ while(True):
         f.write(mainText)
         f.close
     
-    features = create_feature(mainText)
-    features = vectorizer.transform(features)
-    prediction = clf.predict(features)[0]
-    print(mainText, emoji_dict[prediction])
-    print("\n")
+    emo_get("Overall: ", mainText)
+    emo_get("Current: ", mainTextTemp)
