@@ -1,4 +1,4 @@
-from emotions import create_feature, vectorizer, clf, emoji_dict
+from emotions import create_feature, vectorizer, clf, emo_dict
 
 """
 t1 = "I don't know what to do after my father passed away yesterday"
@@ -23,5 +23,5 @@ while (True):
     features = create_feature(textInput)
     features = vectorizer.transform(features)
     prediction = clf.predict(features)[0]
-    print(textInput, emoji_dict[prediction])
+    print(textInput, emo_dict[prediction])
     print("\n")
