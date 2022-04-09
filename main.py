@@ -1,5 +1,6 @@
 import pyaudio
 import speech_recognition as sr
+from googletrans import Translator
 from emotions import create_feature, vectorizer, clf, emo_dict
 
 def processAudio(userChoice, audio):
@@ -62,11 +63,19 @@ while(True):
         audio = r.listen(source)
 
     mainTextTemp = processAudio(userChoice, audio)
-    mainText = mainText + "." + mainTextTemp
     
+
+    if(userChoice == 1):
+        Translator.translate(mainTextTemp, src="zh")
+
+    if(userChoice == 2):
+            Translator.translate(mainTextTemp, src="ms-My")
+
     with open("Transcribed_Text\Transcribed Text.txt", 'w') as f:
         f.write(mainText)
         f.close
     
+    mainText = mainText + "." + mainTextTemp
+
     emo_get("Overall: ", mainText)
     emo_get("Current: ", mainTextTemp)
