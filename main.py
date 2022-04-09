@@ -63,7 +63,6 @@ while(True):
         audio = r.listen(source)
 
     mainTextTemp = processAudio(userChoice, audio)
-    
 
     if(userChoice == 1):
         Translator.translate(mainTextTemp, src="zh")
